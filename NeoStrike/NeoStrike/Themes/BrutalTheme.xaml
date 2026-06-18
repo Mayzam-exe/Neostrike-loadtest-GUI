@@ -1,0 +1,211 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="BgColor">#000000</Color>
+    <Color x:Key="FgColor">#FFFFFF</Color>
+    <Color x:Key="AccentPurple">#6366F1</Color>
+    <Color x:Key="AccentPink">#EC4899</Color>
+    <Color x:Key="AccentCyan">#06B6D4</Color>
+    <Color x:Key="AccentAmber">#F59E0B</Color>
+    <Color x:Key="GlassWhite">#12FFFFFF</Color>
+    <Color x:Key="GlassBorder">#18FFFFFF</Color>
+    <Color x:Key="DimGray">#888888</Color>
+    <Color x:Key="DarkGray">#1A1A1A</Color>
+    <Color x:Key="DarkGray2">#2A2A2A</Color>
+    <Color x:Key="GreenAccent">#00FF41</Color>
+    <Color x:Key="RedAccent">#FF0033</Color>
+    <Color x:Key="YellowAccent">#FFCC00</Color>
+
+    <SolidColorBrush x:Key="BgBrush" Color="{StaticResource BgColor}"/>
+    <SolidColorBrush x:Key="FgBrush" Color="{StaticResource FgColor}"/>
+    <SolidColorBrush x:Key="AccentPurpleBrush" Color="{StaticResource AccentPurple}"/>
+    <SolidColorBrush x:Key="AccentPinkBrush" Color="{StaticResource AccentPink}"/>
+    <SolidColorBrush x:Key="AccentCyanBrush" Color="{StaticResource AccentCyan}"/>
+    <SolidColorBrush x:Key="AccentAmberBrush" Color="{StaticResource AccentAmber}"/>
+    <SolidColorBrush x:Key="GlassBrush" Color="{StaticResource GlassWhite}"/>
+    <SolidColorBrush x:Key="GlassBorderBrush" Color="{StaticResource GlassBorder}"/>
+    <SolidColorBrush x:Key="DimGrayBrush" Color="{StaticResource DimGray}"/>
+    <SolidColorBrush x:Key="DarkGrayBrush" Color="{StaticResource DarkGray}"/>
+    <SolidColorBrush x:Key="DarkGray2Brush" Color="{StaticResource DarkGray2}"/>
+    <SolidColorBrush x:Key="GreenBrush" Color="{StaticResource GreenAccent}"/>
+    <SolidColorBrush x:Key="RedBrush" Color="{StaticResource RedAccent}"/>
+    <SolidColorBrush x:Key="YellowBrush" Color="{StaticResource YellowAccent}"/>
+
+    <LinearGradientBrush x:Key="GradientPurple" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource AccentPurple}" Offset="0"/>
+        <GradientStop Color="{StaticResource AccentPink}" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="GradientCyan" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource AccentPurple}" Offset="0"/>
+        <GradientStop Color="{StaticResource AccentCyan}" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="GradientAmber" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource AccentPink}" Offset="0"/>
+        <GradientStop Color="{StaticResource AccentAmber}" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="GradientFull" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource AccentPurple}" Offset="0"/>
+        <GradientStop Color="{StaticResource AccentPink}" Offset="0.5"/>
+        <GradientStop Color="{StaticResource AccentCyan}" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="GradientGreen" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource AccentCyan}" Offset="0"/>
+        <GradientStop Color="{StaticResource GreenAccent}" Offset="1"/>
+    </LinearGradientBrush>
+
+    <FontFamily x:Key="OrbitronFont">Orbitron, Segoe UI, sans-serif</FontFamily>
+    <FontFamily x:Key="SpaceFont">Space Grotesk, Segoe UI, sans-serif</FontFamily>
+    <FontFamily x:Key="MonoFont">Consolas, Courier New, monospace</FontFamily>
+
+    <Style x:Key="GlassPanel" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource GlassBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GlassBorderBrush}"/>
+        <Setter Property="CornerRadius" Value="16"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <BlurEffect Radius="20" KernelType="Gaussian"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GlassPanelNoBlur" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource GlassBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GlassBorderBrush}"/>
+        <Setter Property="CornerRadius" Value="16"/>
+    </Style>
+
+    <Style x:Key="AccentButton" TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource GradientPurple}"/>
+        <Setter Property="Foreground" Value="{StaticResource FgBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource SpaceFont}"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="20,10"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="100"
+                            Padding="{TemplateBinding Padding}"
+                            BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Opacity" Value="0.85"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Opacity" Value="0.7"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Opacity" Value="0.4"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GlassToggleButton" TargetType="ToggleButton">
+        <Setter Property="Background" Value="{StaticResource GlassBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource DimGrayBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource SpaceFont}"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GlassBorderBrush}"/>
+        <Setter Property="Padding" Value="12,6"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Border x:Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            CornerRadius="100"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource GradientPurple}"/>
+                            <Setter Property="Foreground" Value="{StaticResource FgBrush}"/>
+                            <Setter TargetName="border" Property="BorderBrush" Value="Transparent"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource AccentPurpleBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GlassInput" TargetType="TextBox">
+        <Setter Property="Background" Value="#08FFFFFF"/>
+        <Setter Property="Foreground" Value="{StaticResource FgBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource MonoFont}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GlassBorderBrush}"/>
+        <Setter Property="Padding" Value="12,8"/>
+        <Setter Property="CaretBrush" Value="{StaticResource AccentPurpleBrush}"/>
+        <Setter Property="SelectionBrush" Value="{StaticResource AccentPurpleBrush}"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="GlassComboBox" TargetType="ComboBox">
+        <Setter Property="Background" Value="#08FFFFFF"/>
+        <Setter Property="Foreground" Value="{StaticResource FgBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource MonoFont}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource GlassBorderBrush}"/>
+        <Setter Property="Padding" Value="10,6"/>
+    </Style>
+
+
+    <Style x:Key="SectionLabel" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource SpaceFont}"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Foreground" Value="{StaticResource AccentPurpleBrush}"/>
+        <Setter Property="Margin" Value="0,0,0,12"/>
+    </Style>
+
+    <Style x:Key="SectionTitle" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource SpaceFont}"/>
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource FgBrush}"/>
+        <Setter Property="Margin" Value="0,0,0,20"/>
+    </Style>
+
+    <Style x:Key="KpiValue" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource OrbitronFont}"/>
+        <Setter Property="FontSize" Value="28"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource FgBrush}"/>
+    </Style>
+
+    <Style x:Key="KpiLabel" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource SpaceFont}"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="Foreground" Value="{StaticResource DimGrayBrush}"/>
+        <Setter Property="Margin" Value="0,4,0,0"/>
+    </Style>
+
+    <Style x:Key="LogEntry" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource MonoFont}"/>
+        <Setter Property="FontSize" Value="11"/>
+        <Setter Property="Foreground" Value="{StaticResource DimGrayBrush}"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Padding" Value="0,1"/>
+    </Style>
+
+</ResourceDictionary>
